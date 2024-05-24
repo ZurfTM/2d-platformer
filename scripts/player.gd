@@ -69,7 +69,8 @@ func take_damage(amount: int) -> void:
 	current_hp -= amount
 	#current_hp = max(current_hp, 0)
 	print("Damage", current_hp)
-	emit_signal("health_changed", current_hp, max_hp)
+	#emit_signal("health_changed", current_hp, max_hp)
+	health_changed.emit(current_hp, max_hp)
 	if current_hp <= 0:
 		die()
 

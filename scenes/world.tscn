@@ -97,7 +97,7 @@ position = Vector2(940, 15)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer"]
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer" node_paths=PackedStringArray("player")]
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
