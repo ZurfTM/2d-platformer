@@ -5,5 +5,5 @@ func _ready():
 	pass
 
 
-func _process(delta):
+func _physics_process(delta):
 	global_position = ReplayManager.fetch_new_point()
