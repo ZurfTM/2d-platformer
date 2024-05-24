@@ -42,7 +42,8 @@ func _physics_process(delta):
 	
 func update_animations(horizontal_direction):
 	if is_on_floor():
-		if horizontal_direction == 0:
+		#if horizontal_direction == 0:
+		if is_zero_approx(velocity.x):
 			ap.play("idle")
 		else:
 			ap.play("run")
