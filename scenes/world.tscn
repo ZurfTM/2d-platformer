@@ -1,6 +1,7 @@
-[gd_scene load_steps=12 format=3 uid="uid://mxxuknpee0gl"]
+[gd_scene load_steps=13 format=3 uid="uid://mxxuknpee0gl"]
 
 [ext_resource type="PackedScene" uid="uid://cd03uagfqxer0" path="res://scenes/player.tscn" id="1_3eclg"]
+[ext_resource type="Script" path="res://scenes/world.gd" id="1_o6sq4"]
 [ext_resource type="PackedScene" uid="uid://cqgky7clkrddk" path="res://scenes/tile_map.tscn" id="2_s1ccm"]
 [ext_resource type="Texture2D" uid="uid://dwf57271106wm" path="res://assets/textures/sky.png" id="3_aj0w6"]
 [ext_resource type="Texture2D" uid="uid://clebopjhj7via" path="res://assets/textures/mountains.png" id="4_rcwhi"]
@@ -12,11 +13,14 @@
 [ext_resource type="Script" path="res://scenes/HealthBar.gd" id="10_q3bef"]
 [ext_resource type="Script" path="res://scenes/Timer.gd" id="11_u2dit"]
 
-[node name="World" type="Node2D"]
+[node name="World" type="Node2D" node_paths=PackedStringArray("timer")]
 position = Vector2(566, 576)
+script = ExtResource("1_o6sq4")
+timer = NodePath("Panel")
 
-[node name="Player" parent="." instance=ExtResource("1_3eclg")]
+[node name="Player" parent="." node_paths=PackedStringArray("game") instance=ExtResource("1_3eclg")]
 position = Vector2(-403, -458)
+game = NodePath("..")
 
 [node name="RespawnPoint" type="Node" parent="Player"]
 

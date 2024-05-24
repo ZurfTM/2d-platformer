@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 class_name Player
 
+@export var game: Game
 
 @export var speed = 300
 @export var gravity = 30
@@ -84,6 +85,8 @@ func die() -> void:
 	ReplayManager.clear_positions()
 	current_hp = max_hp
 	global_position = start_point
+	
+	game.timer.reset()
 
 
 

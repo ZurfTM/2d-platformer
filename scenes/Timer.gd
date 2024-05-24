@@ -1,3 +1,4 @@
+class_name GameTimer
 extends Panel
 
 var time: float = 0.0
@@ -5,7 +6,7 @@ var minutes: int = 0
 var seconds: int = 0
 var msec: int = 0
 
-func _process(delta) -> void:
+func _physics_process(delta) -> void:
 	time += delta
 	msec = fmod(time, 1) * 100
 	seconds = fmod(time, 60)
@@ -13,6 +14,9 @@ func _process(delta) -> void:
 	$Minutes.text = "%02d:" % minutes
 	$Seconds.text = "%02d." % seconds
 	$Msecs.text = "%03d" % msec
+
+func reset() -> void:
+	time = 0.0
 
 func stop() -> void:
 	set_process(false)
