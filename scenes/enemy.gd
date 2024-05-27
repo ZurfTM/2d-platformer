@@ -15,8 +15,12 @@ func _physics_process(_delta):
 		speed *= -1.0
 		if speed>=0:
 			$Sprite2D.flip_h = true
-	else:
-		$Sprite2D.flip_h = false
+		else:
+			$Sprite2D.flip_h = false
+		# Equivalent to:
+		# $Sprite2D.flip_h = speed>=0
 	velocity.x = speed
 	#motion = move_and_slide(motion, UP)
-	velocity.y -= 1
+	#velocity.y -= 1
+	
+	move_and_slide()

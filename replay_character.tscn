@@ -5,7 +5,7 @@
 
 [node name="ReplayCharacter" type="Sprite2D"]
 z_index = 2
-position = Vector2(0, -40)
 texture = ExtResource("1_lou33")
+offset = Vector2(0, -40)
 hframes = 10
 script = ExtResource("1_8wl4j")

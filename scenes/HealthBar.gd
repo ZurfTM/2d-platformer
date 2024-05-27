@@ -1,15 +1,11 @@
 extends ProgressBar
 
-@export var player: NodePath
+@export var player: Player
 
 func _ready():
 	if player:
-		var player_instance = get_node(player)
-		if player_instance:
-			player_instance.connect("health_changed", Callable (self, "_on_health_changed"))
-			_on_health_changed()
+		player.connect("health_changed", _on_health_changed)
+		_on_health_changed(0, 0)
 
-func _on_health_changed():
-	var player_instance = get_node(player)
-	if player_instance:
-		value = float(player_instance.current_hp) / float(player_instance.max_hp) * 100
+func _on_health_changed(_current_hp, _max_hp):
+	value = float(player.current_hp) / float(player.max_hp) * 100
